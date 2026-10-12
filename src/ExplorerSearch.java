@@ -34,7 +34,8 @@ public class ExplorerSearch {
         // I STRONGLY RECOMMEND testing some helpers you might make too
         int[] start = startingPoint(island);
         if(start == null) return 0;
-        return -1;
+        boolean[][] seen = new boolean [island.length][island[0].length];
+        return explore (island, seen, start[0], start[1]);
     }
 
     public static int explore(int[][] island, boolean[][] seen, int row, int col) {
