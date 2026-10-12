@@ -79,5 +79,21 @@ public class ExplorerSearchTest {
         };
        ExplorerSearch.reachableArea(island);
     }
+    
+    /*
+    Starting Point Test
+    */
+    @Test
+    public void testStartingPoint_testValidStartingPoint() {
+        int[][] island = {
+            {1,1,1,3,1,1},
+            {3,2,3,1,3,1},
+            {1,1,1,1,3,3},
+            {3,1,2,1,0,1},
+            {1,1,1,2,1,1},
+        };
+        int[] actual = ExplorerSearch.startingPoint(island);
+        assertArrayEquals(new int[] {3, 4}, actual);
+    }
 
 }
