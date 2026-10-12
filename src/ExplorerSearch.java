@@ -67,14 +67,19 @@ public class ExplorerSearch {
     }
 
     public static int[] startingPoint(int[][] island) {
+        int[] start = null;
         for (int row = 0; row < island.length; row++) {
+            
             for (int col = 0; col < island[row].length; col++) {
                 if (island[row][col] == 0) {
-                    return new int[]{row, col};
+                    if(start != null) {
+                        throw new IllegalArgumentException("two starting points not allowed");
+                    }
+                    start = new int[]{row, col};
                 }
             }
         }
 
-        return null;
+        return start;
     }
 }
