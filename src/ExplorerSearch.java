@@ -32,6 +32,20 @@ public class ExplorerSearch {
         // Implement your method here!
         // Please also make more test cases
         // I STRONGLY RECOMMEND testing some helpers you might make too
+        int[] start = startingPoint(island);
+        if(start == null) return 0;
         return -1;
+    }
+
+    public static int[] startingPoint(int[][] island) {
+        for (int row = 0; row < island.length; row++) {
+            for (int column = 0; column < island[row].length; column++) {
+                if (island[row][column] == 0) {
+                    return new int[]{row, column};
+                }
+            }
+        }
+
+        return null;
     }
 }
